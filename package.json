@@ -1,0 +1,19 @@
+{
+  "name": "optro-api",
+  "description": "Provides access to the Optro API, it's Power-ups and License Client for Power-ups.",
+  "scripts": {
+    "build": "tsc --out-dir dist src/index.ts"
+  },
+  "engines": {
+    "node": "^12"
+  },
+  "dependencies": {
+    "ms": "^2.1.2",
+    "node-fetch": "^2.6.0",
+    "object-hash": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.6",
+    "typescript": "^3.9.5"
+  }
+}
