@@ -11,7 +11,7 @@ export default class Cache extends Map {
     private expires: any;
     private interval: any;
 
-    constructor (maxAge, interval) {
+    constructor (maxAge: any, interval: any) {
         super();
         this.maxAge = this.ms(maxAge) || Infinity;
         this.expires = new Map();
@@ -21,7 +21,7 @@ export default class Cache extends Map {
             null;
     }
 
-    ms (ttl) {
+    ms (ttl: any) {
         switch (typeof ttl) {
             case 'string':
                 ttl = ms(ttl);
@@ -65,11 +65,11 @@ export default class Cache extends Map {
         return keys;
     }
 
-    check (key) {
+    check (key: any) {
         return this.expires.get(key) > this.now();
     }
 
-    get (key) {
+    get (key: any) {
         return this.check(key) ? super.get(key) : void 0;
     }
 
@@ -91,7 +91,7 @@ export default class Cache extends Map {
         return super.size;
     }
 
-    proxy (fn, maxAge) {
+    proxy (fn: any, maxAge: any) {
         const cache = this;
         const fnkey = hashobj(fn);
         return function () {

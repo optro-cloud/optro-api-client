@@ -1,11 +1,16 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "target": "ES5",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true
-  }
+    "downlevelIteration": true,
+    "declaration": true,
+    "outDir": "./lib"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
