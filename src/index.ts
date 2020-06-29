@@ -3,7 +3,7 @@ import {fetchLicenseStatus} from "./api";
 
 /**
  * Main File for the Optro License API.
- * It is a Typescript Class.
+ * It exports a Class.
  * @author: Optro Market
  * @when:   2020
  */
@@ -47,4 +47,9 @@ export class OptroLicenseApi {
             return liveValue;
         }
     }
+
+    // TODO: Add additional methods:
+    //  (a) Listing Power-ups
+    //  (b) Get Power-up Pricing
+    //  (c) Vendor API (with secret key auth)
 }
