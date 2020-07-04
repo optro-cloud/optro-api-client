@@ -38,6 +38,6 @@ See LICENSE.md
 
 ### About Optro
 
-Optro Market is the best place to discover new Pro Power-ups for Trello.
+[Optro Market](https://www.optro.cloud) is the best place to discover new Pro Power-ups for Trello.
 
 As a vendor, use this SDK to hook into the Market API and generate revenue from your innovative Power-ups.
