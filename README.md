@@ -4,6 +4,8 @@ This library enables you to easily integrate your Trello Power-up with the Optro
 
 ### How to use?
 
+We're currently finalizing the API and Vendor interface, but this provides a sneak peak at what is coming soon!
+
 The library is distributed as an 'npm' module and can be used in a few different ways:
 
 #### [Option A] Recommended: Using in Back-end (e.g. Express)
