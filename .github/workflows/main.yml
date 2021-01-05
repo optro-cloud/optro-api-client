@@ -11,7 +11,9 @@ jobs:
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v2
+      - name: Install Packages
+        run: npm install
       - name: Compile TypeScript
-        uses: iCrawl/action-tsc@v1
+        run: npm build
       - name: List Files
         run: ls -la
