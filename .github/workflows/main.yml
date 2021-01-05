@@ -11,9 +11,16 @@ jobs:
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
       - name: Install Packages
-        run: npm install
+        run: yarn install
       - name: Compile TypeScript
         run: npm build
-      - name: List Files
-        run: ls -la
+      - name: Publish Package
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_API_KEY}}
