@@ -47,7 +47,15 @@ export class OptroLicenseApi {
             return liveValue;
         }
     }
+}
 
+export class OptroPowerupApi {
+    private readonly apiKey: string = null;
+
+    public constructor(apiKey: string) {
+        this.apiKey = apiKey;
+    }
+    
     // TODO: Add additional methods:
     //  (a) Listing Power-ups
     //  (b) Get Power-up Pricing
