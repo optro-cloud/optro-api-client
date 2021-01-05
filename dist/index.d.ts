@@ -6,3 +6,7 @@ export declare class OptroLicenseApi {
     getBoardLicenseStatus(boardId: string): Promise<any>;
     getMemberLicenseStatus(memberId: string): Promise<any>;
 }
+export declare class OptroPowerupApi {
+    private readonly apiKey;
+    constructor(apiKey: string);
+}

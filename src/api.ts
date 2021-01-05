@@ -1,3 +1,4 @@
+"use strict";
 import {OptroLicenseRequest} from "./types";
 
 /**

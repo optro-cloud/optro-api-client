@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OptroLicenseApi = void 0;
+exports.OptroPowerupApi = exports.OptroLicenseApi = void 0;
 var cache_1 = require("./cache");
 var api_1 = require("./api");
 var OptroLicenseApi = (function () {
@@ -87,4 +87,12 @@ var OptroLicenseApi = (function () {
     return OptroLicenseApi;
 }());
 exports.OptroLicenseApi = OptroLicenseApi;
+var OptroPowerupApi = (function () {
+    function OptroPowerupApi(apiKey) {
+        this.apiKey = null;
+        this.apiKey = apiKey;
+    }
+    return OptroPowerupApi;
+}());
+exports.OptroPowerupApi = OptroPowerupApi;
 //# sourceMappingURL=index.js.map

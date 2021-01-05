@@ -1,3 +1,4 @@
+"use strict";
 import Cache from "./cache";
 import {fetchLicenseStatus} from "./api";
 

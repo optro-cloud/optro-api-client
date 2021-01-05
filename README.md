@@ -36,10 +36,10 @@ We welcome contributions to the source code - just raise a Pull Request!
 
 ### License
 
-See LICENSE.md
+MIT License
 
 ### About Optro
 
 [Optro Market](https://www.optro.cloud) is the best place to discover new Pro Power-ups for Trello.
 
-As a vendor, use this SDK to hook into the Market API and generate revenue from your innovative Power-ups.
+Use this SDK to hook into the Optro Market API and generate revenue from your innovative Power-up ideas!

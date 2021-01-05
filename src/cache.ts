@@ -1,3 +1,4 @@
+"use strict";
 import ms from "ms";
 import hashobj from "object-hash";
 
