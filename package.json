@@ -1,7 +1,12 @@
 {
-  "name": "optro-api",
+  "name": "optro-api-client",
   "description": "Provides access to the Optro API, it's Power-ups and License Client for Power-ups.",
-  "license": "SEE LICENSE IN LICENSE.md",
+  "website": "https://www.optro.cloud",
+  "author": {
+    "name" : "Jack Graves",
+    "url": "https://github.com/jackgraves"
+  },
+  "license": "MIT",
   "scripts": {
     "build": "tsc"
   },
