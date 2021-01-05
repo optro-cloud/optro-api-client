@@ -9,7 +9,7 @@ We're currently finalizing the API and Vendor interface, but this provides a sne
 The library is distributed as an 'npm' module and can be used in a few different ways:
 
 #### [Option A] Recommended: Using in Back-end (e.g. Express)
-1. Install the library `npm install optro-license-client`
+1. Install the library `npm install optro-license-client node-fetch`
 3. Instantiate the client with `const licenseClient = new OptroLicenseClient("apiKey", "powerUpId", "10m", "2m")`
 3. Call the method and use conditionals to limit featureset `licenseClient.getBoardLicenseStatus("board-id")`
 4. You've successfully implemented license checking in your Power-up from the server-side
