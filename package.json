@@ -2,7 +2,7 @@
   "name": "optro-api-client",
   "description": "Provides access to the Optro API, it's Power-ups and License Client for Power-ups.",
   "website": "https://www.optro.cloud",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "MIT",
   "scripts": {
     "build": "tsc"
