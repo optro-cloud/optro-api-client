@@ -15,12 +15,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-          registry-url: https://registry.npmjs.org/
+          registry-url: https://registry.npmjs.org
       - name: Install Packages
         run: yarn install
       - name: Compile TypeScript
         run: yarn build
       - name: Publish Package
-        run: npm publish --access public
+        run: yarn publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_API_KEY}}
