@@ -19,7 +19,7 @@ The library is distributed as an 'npm' module and can be used in a few different
 This is the most flexible but least secure option for implementing licensing checking.
 
 1. Install the library with `npm install optro-license-client`
-2. Import the class with `import {OptroLicenseClient} from "optro-license-client";`
+2. Import the class with `import {OptroLicenseClient} from "optro-license-client/dist";`
 3. Instantiate the client with `const licenseClient = new OptroLicenseClient("apiKey", "powerUpId", "10m", "2m")`
 3. Call the method and use conditionals to limit featureset `licenseClient.getBoardLicenseStatus("board-id")`
 4. You've successfully implemented license checking in your Power-up from the client-side
