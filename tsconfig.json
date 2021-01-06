@@ -10,8 +10,7 @@
     "esModuleInterop": true,
     "downlevelIteration": true,
     "declaration": true,
-    "outDir": "./dist",
-    "types": ["./src/types.d.ts"]
+    "outDir": "./dist"
   },
   "include": ["src"],
   "exclude": ["node_modules"]
