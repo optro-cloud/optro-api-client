@@ -19,7 +19,7 @@ jobs:
       - name: Install Packages
         run: yarn install
       - name: Compile TypeScript
-        run: npm build
+        run: yarn build
       - name: Publish Package
         run: npm publish --access public
         env:
