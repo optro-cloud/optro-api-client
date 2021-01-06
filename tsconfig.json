@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es6",
+    "target": "ES5",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
@@ -11,7 +11,7 @@
     "downlevelIteration": true,
     "declaration": true,
     "outDir": "./dist",
-    "typeRoots": ["./dist"]
+    "types": ["./src/types.d.ts"]
   },
   "include": ["src"],
   "exclude": ["node_modules"]

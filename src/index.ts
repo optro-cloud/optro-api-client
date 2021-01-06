@@ -1,5 +1,6 @@
 import Cache from "./cache";
 import {fetchLicenseStatus} from "./api";
+import {OptroBoardLicenseStatus, OptroUserLicenseStatus} from "./types";
 
 /**
  * Main File for the Optro License API.
@@ -22,7 +23,7 @@ export class OptroLicenseApi {
      * Find out if a particular Trello Board has been licensed.
      * @param boardId   The Trello Board ID
      */
-    public async getBoardLicenseStatus(boardId: string) {
+    public async getBoardLicenseStatus(boardId: string): Promise<OptroBoardLicenseStatus> {
         const cachedValue = this.cache?.get(`board_${boardId}`);
         if (typeof cachedValue !== "undefined") {
             return cachedValue;
@@ -37,7 +38,7 @@ export class OptroLicenseApi {
      * Find out if a particular Trello Member has been licensed.
      * @param memberId   The Trello Member ID (actually Atlassian Account ID now)
      */
-    public async getMemberLicenseStatus(memberId: string) {
+    public async getMemberLicenseStatus(memberId: string): Promise<OptroUserLicenseStatus> {
         const cachedValue = this.cache.get(`member_${memberId}`);
         if (typeof cachedValue !== "undefined") {
             return cachedValue;
@@ -47,17 +48,4 @@ export class OptroLicenseApi {
             return liveValue;
         }
     }
-}
-
-export class OptroPowerupApi {
-    private readonly apiKey: string = null;
-
-    public constructor(apiKey: string) {
-        this.apiKey = apiKey;
-    }
-    
-    // TODO: Add additional methods:
-    //  (a) Listing Power-ups
-    //  (b) Get Power-up Pricing
-    //  (c) Vendor API (with secret key auth)
 }
