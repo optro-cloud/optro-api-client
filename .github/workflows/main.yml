@@ -16,7 +16,6 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-          scope: optro
       - name: Install Packages
         run: yarn install
       - name: Compile TypeScript
