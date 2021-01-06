@@ -1,4 +1,3 @@
-"use strict";
 import ms from "ms";
 import hashobj from "object-hash";
 
@@ -8,8 +7,8 @@ import hashobj from "object-hash";
  * https://github.com/alxarch/map-cache-ttl
  */
 export default class Cache extends Map {
-    private maxAge: any;
-    private expires: any;
+    private readonly maxAge: any;
+    expires: any;
     private interval: any;
 
     constructor (maxAge: any, interval: any) {

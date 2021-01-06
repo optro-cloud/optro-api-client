@@ -1,4 +1,3 @@
-"use strict";
 import Cache from "./cache";
 import {fetchLicenseStatus} from "./api";
 
@@ -24,12 +23,12 @@ export class OptroLicenseApi {
      * @param boardId   The Trello Board ID
      */
     public async getBoardLicenseStatus(boardId: string) {
-        const cachedValue = this.cache.get(`board_${boardId}`);
+        const cachedValue = this.cache?.get(`board_${boardId}`);
         if (typeof cachedValue !== "undefined") {
             return cachedValue;
         } else {
             const liveValue = await fetchLicenseStatus({powerupId: this.powerUpId, boardId: boardId}, this.apiKey);
-            this.cache.set(`board_${boardId}`, liveValue, undefined);
+            this.cache?.set(`board_${boardId}`, liveValue, undefined);
             return liveValue;
         }
     }

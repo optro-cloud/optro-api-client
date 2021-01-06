@@ -7,11 +7,12 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "downlevelIteration": true,
     "declaration": true,
-    "outDir": "./dist",
-    "typeRoots": ["./dist"]
+    "outDir": "dist",
+    "typeRoots": ["dist"]
   },
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist"]
 }
