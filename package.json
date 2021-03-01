@@ -1,6 +1,11 @@
 {
   "name": "optro-api-client",
   "description": "Provides access to the Optro API, it's Power-ups and License Client for Power-ups.",
+  "homepage": "https://github.com/optro-cloud/optro-api-client",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/optro-cloud/optro-api-client.git"
+  },
   "website": "https://www.optro.cloud",
   "version": "0.0.9",
   "license": "MIT",
