@@ -13,6 +13,17 @@ export interface OptroPowerup {
     };
 }
 
+export interface OptroLicenseResponse {
+    isRegistered: boolean;
+    isLicensed: boolean;
+}
+
+export interface OptroLicenseRequest {
+    powerupId: string;
+    boardId?: string;
+    memberId?: string;
+}
+
 export interface OptroPowerupFull extends OptroPowerup {
     description: string;
     featuresFree: string[];
@@ -26,25 +37,4 @@ export interface OptroPowerupFull extends OptroPowerup {
         unit_amount: number;
         unit_amount_decimal: string;
     };
-}
-
-export interface OptroLicenseResponse {
-    isRegistered: boolean;
-    isLicensed: boolean;
-}
-
-export interface OptroBoardLicenseStatus {
-    powerupId: string;
-    boardId: string;
-}
-
-export interface OptroUserLicenseStatus {
-    powerupId: string;
-    memberId: string;
-}
-
-export interface OptroLicenseRequest {
-    powerupId: string;
-    boardId?: string;
-    memberId?: string;
 }

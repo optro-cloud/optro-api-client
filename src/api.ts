@@ -1,4 +1,4 @@
-import {OptroLicenseRequest} from "./types";
+import {OptroLicenseRequest} from "./types/types";
 
 /**
  * Fetch the License Status from the Optro License API

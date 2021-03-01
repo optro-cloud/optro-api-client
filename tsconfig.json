@@ -10,6 +10,7 @@
     "esModuleInterop": true,
     "downlevelIteration": true,
     "declaration": true,
+    "typeRoots": ["src/types"],
     "outDir": "./dist"
   },
   "include": ["src"],
