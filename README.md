@@ -44,11 +44,18 @@ Using the Optro API Client from your Server-side is the most robust strategy to 
    ```
    // if using TypeScript
    import { OptroLicenseResponse } from "@optro/api-client/dist/types/types";
+   
    // check license status of board + power-up pair using the client
-   [Board License Type] const licenseStatus: OptroLicenseResponse = await optroClient.getBoardLicenseStatus(t.getContext().board);
+   const t = window.TrelloPowerUp.iframe();
+   const boardId: string = t.getContext().board;
+   const licenseStatus: OptroLicenseResponse = await optroClient.getBoardLicenseStatus(boardId);
+   
    // or check license status of member + power-up pair using client
-   [Member License Type] const licenseStatus: OptroLicenseResponse = await optroClient.getMemberLicenseStatus(t.getContext().board);
-   // then you can just ask whether they are registered and licensed to use your Power-Up on a paid plan
+   const t = window.TrelloPowerUp.iframe();
+   const memberId: string = t.getContext().member;
+   const licenseStatus: OptroLicenseResponse = await optroClient.getMemberLicenseStatus(memberId);
+   
+   // then check whether they are registered and licensed to use your Power-Up on a paid plan
    return licenseStatus.isRegistered && licenseStatus.isLicensed();
    ```
    
