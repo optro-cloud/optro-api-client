@@ -15,31 +15,44 @@ We have created a suite of tools to make creating Power-Ups with built-in licens
  * Use the Trello Power-Up Generator (`npx create-trello-powerup`) to create a Power-Up based on your selection of capabilities and features to enable
  * Use the Trello Power-Up Template as a basis for your own Power-Up, based on best practices.
 
-#### [Option B] Using in Back-end (e.g. Express)
+#### [Option B] Using Javascript with NPM/Yarn (Node.js and Browser compatible)
 
 Using the Optro API Client from your Server-side is the most robust strategy to enforce licensing restrictions - it allows you to have complete control over the behaviour of your Power-Up and the different conditions.
 
-1. Install the library `npm install @optro/api-client node-fetch`
-2. Import the class with `import {OptroLicenseApi} from "@optro/api-client";`
-3. Instantiate the client with `const licenseClient = new OptroLicenseApi("MY-OPTRO-API-KEY", "MY-POWERUP-ID", "10m", "2m");`
-4. Call the method and use conditionals to limit featureset:
-    * License by Board `licenseClient.getBoardLicenseStatus("board-id");`
-    * License by User `licenseClient.getMemberLicenseStatus("member-id");`
-5. You've successfully implemented license checking in your Power-up from the server-side
+1. Install the library (and node-fetch if using from server-side ie. Node.js)
 
-#### [Option C] Using in Front-end with Module (e.g. React)
+   ```
+   npm install @optro/api-client node-fetch
+   ```
 
-This is the most flexible but least secure option for implementing licensing checking in your Power-Up.
+2. Import the API Class
 
-1. Install the library with `npm install optro-api-client`
-2. Import the class with `import {OptroLicenseApi} from "@optro/api-client";`
-3. Instantiate the client with `const licenseClient = new OptroLicenseApi("MY-OPTRO-API-KEY", "MY-POWERUP-ID");`
-4. Call the method and use conditionals to limit featureset:
-    * License by Board `licenseClient.getBoardLicenseStatus("board-id");`
-    * License by User `licenseClient.getMemberLicenseStatus("member-id");`
-5. You've successfully implemented license checking in your Power-up from the client-side
+   ```
+   import {OptroLicenseApi} from "@optro/api-client/dist";
+   ```
 
-#### [Option D] Using in Front-end with Vanilla JS
+3. Create a Client with your Power-Up Details
+
+   ```
+   const optroClient = new OptroLicenseApi("OPTRO_API_KEY", "POWERUP_ID");
+   ```
+
+4. Call the license check that matches your Power-Up's licensing model in Optro
+
+   ```
+   // if using TypeScript
+   import { OptroLicenseResponse } from "@optro/api-client/dist/types/types";
+   // check license status of board + power-up pair using the client
+   [Board License Type] const licenseStatus: OptroLicenseResponse = await optroClient.getBoardLicenseStatus(t.getContext().board);
+   // or check license status of member + power-up pair using client
+   [Member License Type] const licenseStatus: OptroLicenseResponse = await optroClient.getMemberLicenseStatus(t.getContext().board);
+   // then you can just ask whether they are registered and licensed to use your Power-Up on a paid plan
+   return licenseStatus.isRegistered && licenseStatus.isLicensed();
+   ```
+   
+5. You can use your own interface to provide information on the license applied, or using the `@optro/ui-react` library you can pass these values to the `SubscriptionStatus` React Component and have these rendered in a clean and consistent way across all Optro-licensed Power-Ups, with internationalization support.
+
+#### [Option C] Using in Front-end with Vanilla JS
 
 You can include the library as a standard script and then call it from your javascript, this is useful when you're not using a libary like React or Angular (commonly with Webpack).
 
@@ -47,6 +60,16 @@ You can include the library as a standard script and then call it from your java
 <script src="@optro/api-client/dist/cache.js"></script>
 <script src="@optro/api-client/dist/api.js"></script>
 <script src="@optro/api-client/dist/index.js"></script>
+<script>
+var t = window.TrelloPowerUp.iframe({appKey: "APP_KEY", appName: "APP_NAME"});
+var client = new OptroLicenseApi("OPTRO_API_KEY", "POWERUP_ID);
+client.getBoardLicenseStatus(t.getContext().board).then(function(result) {
+   var status = result.isRegistered && result.isLicensed;
+   // Do something with the status, such as restrict features or render a message)
+}).catch(function(error) {
+   console.error(error);
+});
+</script>
 ```
 
 ### API Docs
