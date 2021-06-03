@@ -7,7 +7,7 @@
     "url": "https://github.com/optro-cloud/optro-api-client.git"
   },
   "website": "https://www.optro.cloud",
-  "version": "0.9.10",
+  "version": "1.0.1",
   "license": "Commercial",
   "scripts": {
     "build": "tsc"
