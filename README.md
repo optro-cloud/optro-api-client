@@ -2,7 +2,6 @@
 
 ![optro-sdk](https://img.shields.io/badge/Optro-SDK-blue)
 ![npm](https://img.shields.io/npm/v/@optro/api-client)
-![npm bundle size](https://img.shields.io/bundlephobia/min/@optro/api-client)
 [![Release Package](https://github.com/optro-cloud/optro-api-client/actions/workflows/main.yml/badge.svg)](https://github.com/optro-cloud/optro-api-client/actions/workflows/main.yml)
 
 This library enables you to easily integrate your Trello Power-up with the Optro Market for Pro Power-up licensing.
