@@ -95,7 +95,6 @@ class Cache extends Map {
         };
     }
 }
-exports.default = Cache;
 const mapiter = Map.prototype[Symbol.iterator];
 Cache.prototype.entries = function* cacheEntries() {
     for (let pair of this) {
@@ -123,4 +122,5 @@ Cache.prototype[Symbol.iterator] = function* cacheIterator() {
         }
     }
 };
+exports.default = Cache;
 //# sourceMappingURL=cache.js.map
