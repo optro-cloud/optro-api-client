@@ -6,7 +6,7 @@ import hashobj from "object-hash";
  * Thanks to Alexandros Sigalas -
  * https://github.com/alxarch/map-cache-ttl
  */
-export default class Cache extends Map {
+class Cache extends Map {
     private readonly maxAge: any;
     expires: any;
     private interval: any;
@@ -144,3 +144,6 @@ Cache.prototype[Symbol.iterator] = function *cacheIterator() {
         }
     }
 };
+
+
+export default Cache;

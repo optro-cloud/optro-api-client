@@ -1,9 +1,5 @@
-import { OptroBoardLicenseStatus, OptroUserLicenseStatus } from "./types";
-export declare class OptroLicenseApi {
-    private cache;
-    private readonly apiKey;
-    private readonly powerUpId;
-    constructor(apiKey: string, powerupId: string, maxAge: string, interval: string);
-    getBoardLicenseStatus(boardId: string): Promise<OptroBoardLicenseStatus>;
-    getMemberLicenseStatus(memberId: string): Promise<OptroUserLicenseStatus>;
-}
+import * as Types from "./types/types";
+export { default as OptroLicenseApi } from './OproLicenseApi';
+export { default as Cache } from './cache';
+export { fetchLicenseStatus as fetchLicenseStatus } from './api';
+export { Types };

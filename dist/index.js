@@ -1,56 +1,34 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
 };
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OptroLicenseApi = void 0;
-const cache_1 = __importDefault(require("./cache"));
-const api_1 = require("./api");
-class OptroLicenseApi {
-    constructor(apiKey, powerupId, maxAge, interval) {
-        this.cache = null;
-        this.apiKey = null;
-        this.powerUpId = null;
-        this.apiKey = apiKey;
-        this.powerUpId = powerupId;
-        this.cache = new cache_1.default(maxAge, interval);
-    }
-    getBoardLicenseStatus(boardId) {
-        var _a, _b;
-        return __awaiter(this, void 0, void 0, function* () {
-            const cachedValue = (_a = this.cache) === null || _a === void 0 ? void 0 : _a.get(`board_${boardId}`);
-            if (typeof cachedValue !== "undefined") {
-                return cachedValue;
-            }
-            else {
-                const liveValue = yield api_1.fetchLicenseStatus({ powerupId: this.powerUpId, boardId: boardId }, this.apiKey);
-                (_b = this.cache) === null || _b === void 0 ? void 0 : _b.set(`board_${boardId}`, liveValue, undefined);
-                return liveValue;
-            }
-        });
-    }
-    getMemberLicenseStatus(memberId) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const cachedValue = this.cache.get(`member_${memberId}`);
-            if (typeof cachedValue !== "undefined") {
-                return cachedValue;
-            }
-            else {
-                const liveValue = yield api_1.fetchLicenseStatus({ powerupId: this.powerUpId, memberId: memberId }, this.apiKey);
-                this.cache.set(`member_${memberId}`, liveValue, undefined);
-                return liveValue;
-            }
-        });
-    }
-}
-exports.OptroLicenseApi = OptroLicenseApi;
+exports.Types = exports.fetchLicenseStatus = exports.Cache = exports.OptroLicenseApi = void 0;
+const Types = __importStar(require("./types/types"));
+exports.Types = Types;
+var OproLicenseApi_1 = require("./OproLicenseApi");
+Object.defineProperty(exports, "OptroLicenseApi", { enumerable: true, get: function () { return __importDefault(OproLicenseApi_1).default; } });
+var cache_1 = require("./cache");
+Object.defineProperty(exports, "Cache", { enumerable: true, get: function () { return __importDefault(cache_1).default; } });
+var api_1 = require("./api");
+Object.defineProperty(exports, "fetchLicenseStatus", { enumerable: true, get: function () { return api_1.fetchLicenseStatus; } });
 //# sourceMappingURL=index.js.map
