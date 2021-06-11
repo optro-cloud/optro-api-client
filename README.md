@@ -30,7 +30,7 @@ Using the Optro API Client from your Server-side is the most robust strategy to 
 2. Import the API Class
 
    ```
-   import {OptroLicenseApi} from "@optro/api-client/dist";
+   import {OptroLicenseApi} from "@optro/api-client";
    ```
 
 3. Create a Client with your Power-Up Details
@@ -43,7 +43,7 @@ Using the Optro API Client from your Server-side is the most robust strategy to 
 
    ```
    // if using TypeScript
-   import { OptroLicenseResponse } from "@optro/api-client/dist/types/types";
+   import { OptroLicenseResponse } from "@optro/api-client";
    
    // check license status of board + power-up pair using the client
    const t = window.TrelloPowerUp.iframe();
