@@ -8,8 +8,6 @@ This library enables you to easily integrate your Trello Power-up with the Optro
 
 ### How to use?
 
-We're currently finalizing the API and Vendor interface, but this provides a sneak peak at what is coming soon!
-
 The library is distributed as an 'npm' module and can be used in a few different ways:
 
 #### [Option A] Recommended: Use the Optro Trello Dev Tools
@@ -130,6 +128,14 @@ The API that this library uses (https://api.optro.cloud) is proprietary and is p
 
 ### About Optro
 
-[Optro Market](https://www.optro.cloud) is the best place to discover new Pro Power-ups for Trello.
+[Optro](https://www.optro.cloud) is the best place to discover new Pro Power-ups for Trello.
 
-Use this SDK to hook into the Optro Market API and generate revenue from your innovative Power-up ideas!
+Using [Optro Vendor](https://vendor.optro.cloud), you can learn how to build Power-Ups with best practice and monetization features baked right in!
+
+Use the tools provided with Optro and generate revenue from your innovative Power-up ideas:
+* https://github.com/optro-cloud/create-trello-powerup
+* https://github.com/optro-cloud/trello-powerup-full-sample
+* https://github.com/optro-cloud/optro-ui-react
+* https://github.com/optro-cloud/optro-api-client
+
+View our getting started guide over on the [Optro Vendor Docs](https://docs.appfox.io/optro-vendor/) site.
