@@ -15,7 +15,7 @@ The library is distributed as an 'npm' module and can be used in a few different
 We have created a suite of tools to make creating Power-Ups with built-in licensing as easy as possible, with React, TypeScript, Webpack all setup for you:
 * **Recommended** - Use the Trello Power-Up Generator (`@npx create-trello-powerup`) to create a Trello Power-Up based on your selection selected of capabilities and features
 
-* **Advanced** - Use the existing Power-Up template as a basis for your own Trello Power-Up. This option will be more time consume and we would only recommend this route for experienced developers that are looking for a challenge.
+* **Advanced** - Use the existing Power-Up template as a basis for your own Trello Power-Up. This option will be more time consuming and we would only recommend this route for experienced developers that are looking for a challenge.
 
 #### [Option B] Using Javascript with NPM/Yarn (Node.js and Browser compatible)
 
