@@ -4,20 +4,18 @@
 ![npm](https://img.shields.io/npm/v/@optro/api-client)
 [![Release Package](https://github.com/optro-cloud/optro-api-client/actions/workflows/main.yml/badge.svg)](https://github.com/optro-cloud/optro-api-client/actions/workflows/main.yml)
 
-This library enables you to easily integrate your Trello Power-up with the Optro Market for Pro Power-up licensing.
+This library enables you to easily integrate your Trello Power-Up with the Optro Market for paid subscription licensing.
 
 ### How to use?
 
-We're currently finalizing the API and Vendor interface, but this provides a sneak peak at what is coming soon!
-
 The library is distributed as an 'npm' module and can be used in a few different ways:
 
-#### [Option A] Recommended: Use the Optro Trello Dev Tools
+#### [Option A] Recommended: Use our tools for Developers
 
 We have created a suite of tools to make creating Power-Ups with built-in licensing as easy as possible, with React, TypeScript, Webpack all setup for you:
+* **Recommended** - Use the Trello Power-Up Generator (`@npx create-trello-powerup`) to create a Trello Power-Up based on your selection selected of capabilities and features
 
- * Use the Trello Power-Up Generator (`npx create-trello-powerup`) to create a Power-Up based on your selection of capabilities and features to enable
- * Use the Trello Power-Up Template as a basis for your own Power-Up, based on best practices.
+* **Advanced** - Use the existing Power-Up template as a basis for your own Trello Power-Up. This option will be more time consuming and we would only recommend this route for experienced developers that are looking for a challenge.
 
 #### [Option B] Using Javascript with NPM/Yarn (Node.js and Browser compatible)
 
@@ -32,7 +30,7 @@ Using the Optro API Client from your Server-side is the most robust strategy to 
 2. Import the API Class
 
    ```
-   import {OptroLicenseApi} from "@optro/api-client/dist";
+   import {OptroLicenseApi} from "@optro/api-client";
    ```
 
 3. Create a Client with your Power-Up Details
@@ -45,7 +43,7 @@ Using the Optro API Client from your Server-side is the most robust strategy to 
 
    ```
    // if using TypeScript
-   import { OptroLicenseResponse } from "@optro/api-client/dist/types/types";
+   import { OptroLicenseResponse } from "@optro/api-client";
    
    // check license status of board + power-up pair using the client
    const t = window.TrelloPowerUp.iframe();
@@ -128,8 +126,14 @@ This library is provided under the MIT License.
 
 The API that this library uses (https://api.optro.cloud) is proprietary and is provided under commercial terms.
 
-### About Optro
+### About the Optro Market
 
-[Optro Market](https://www.optro.cloud) is the best place to discover new Pro Power-ups for Trello.
+Optro Market is the best place to discover Trello Power-Ups with new and exciting features unlocked
 
-Use this SDK to hook into the Optro Market API and generate revenue from your innovative Power-up ideas!
+By using our resources, you’ll be able to build Power-Ups with best practice and monetization features baked in from the beginning.
+
+Follow our [step-by-step guide](https://vendor.optro.cloud/build-trello-powerup) to building a Power-Up and check out these tools to begin turning your Power-Up ideas into a reality:
+* https://github.com/optro-cloud/create-trello-powerup
+* https://github.com/optro-cloud/trello-powerup-full-sample
+* https://github.com/optro-cloud/optro-ui-react
+* https://github.com/optro-cloud/optro-api-client 
