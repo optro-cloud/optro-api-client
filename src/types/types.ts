@@ -22,6 +22,7 @@ export interface OptroLicenseRequest {
     powerupId: string;
     boardId?: string;
     memberId?: string;
+    organisationId?: string;
 }
 
 export interface OptroPowerupFull extends OptroPowerup {

@@ -48,6 +48,21 @@ class OptroLicenseApi {
             return liveValue;
         }
     }
+
+    /**
+     * Find out if a particular Trello Organisation has been licensed.
+     * @param organisationId - Trello Organisation ID
+     */
+    public async getOrganisationLicenseStatus(organisationId: string): Promise<OptroLicenseResponse> {
+        const cachedValue = this.cache.get(`organisation_${organisationId}`);
+        if (cachedValue) {
+            return cachedValue;
+        } else {
+            const liveValue = await fetchLicenseStatus({powerupId: this.powerUpId, organisationId}, this.apiKey);
+            this.cache.set(`organisation_${organisationId}`, liveValue, undefined);
+            return liveValue;
+        }
+    }
 }
 
 export default OptroLicenseApi;
