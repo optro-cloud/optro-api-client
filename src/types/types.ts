@@ -29,7 +29,7 @@ export interface OptroPowerupFull extends OptroPowerup {
   featuresFree: string[];
   featuresPro: string[];
   images: string[];
-  licensingModel: "board" | "user";
+  licensingModel: 'board' | 'user' | 'organisation';
   price: {
     id: string;
     active: boolean;
